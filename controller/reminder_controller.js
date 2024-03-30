@@ -41,11 +41,34 @@ let remindersController = {
   },
 
   update: (req, res) => {
-    // implementation here 👈
+    // Grabs current webpage inputs
+    let reminder = {
+      id: parseInt(req.params.id),
+      title: req.body.title,
+      description: req.body.description,
+      completed: JSON.parse(req.body.completed),
+    };
+    let reminderToFind = req.params.id;
+    //Finds the index of the reminder with the id
+    indexOfReminder = database.cindy.reminders.findIndex(function(reminder){
+      return reminder.id == reminderToFind
+    });
+
+    // Go into the database with the index and change the dict into the reminder/current input
+    database.cindy.reminders[indexOfReminder] = reminder
+
+    res.redirect("/reminders");
   },
 
   delete: (req, res) => {
-    // implementation here 👈
+    let reminderToFind = req.params.id;
+    // Finds index of reminder
+    indexOfReminder = database.cindy.reminders.findIndex(function(reminder){
+      return reminder.id == reminderToFind
+    });
+    // Deletes it
+    database.cindy.reminders.splice(indexOfReminder,1)
+    res.redirect("/reminders");
   },
 };
 

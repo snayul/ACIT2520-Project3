@@ -1,6 +1,10 @@
 let Database = [
   {
+    id:1,
+    email:"cindy@123.com",
+    password:"password123",
     name: "cindy",
+    role:"user",
     reminders: [
       {
         id: 1,
@@ -24,7 +28,11 @@ let Database = [
   },
 
   {
+    id:2,
+    email:"sam@123.com",
+    password:"password123",
     name: "sam",
+    role:"admin",
     reminders: [
       {
         id: 1,

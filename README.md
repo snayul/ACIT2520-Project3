@@ -19,6 +19,11 @@ Added log out feature that only shows if user is logged in
 Added a register button on the login so we dont have to type /register
 Added logout feature
 Rearranged database structure
+Implemented Admin check
+Implemented Admin page
+Implemented revoke feature for admin
+Redirects regular users and non-users if they try to access /admin
+
 
 Christine Chanicka: 
 I watched [Understanding our Term Project Starter Code Part 1](https://learn.bcit.ca/d2l/le/content/999093/viewContent/9900452/View)\

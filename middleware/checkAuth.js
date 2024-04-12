@@ -11,10 +11,11 @@ module.exports = {
     }
     return res.redirect("/reminders");
   },
+  //If not admin and auth returns to home
   checkAdminAuth: function (req, res, next) {
     if (req.isAuthenticated() && req.user.isAdmin) {
       return next();
     }
-    return res.redirect("/dashboard");
+    return res.redirect("/");
   },
 };

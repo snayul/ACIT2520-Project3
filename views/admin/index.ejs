@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="page-header">Users</h1>
+
+  <ul class="list-group">
+    <% sesh.forEach(function (user) { %>
+      <li class="list-group-item">
+        <strong>Session: </strong><%= user.sessionId %><br>
+        <strong>User: </strong><%= user.userID %><br>
+        <form action="/admin" method="POST">
+          <input type="hidden" name="sessionId" value="<%= user.sessionId %>">
+          <button type="submit" class="btn btn-danger">Revoke Session</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+
+</div>

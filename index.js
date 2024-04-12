@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
-const dashController = require("./controller/dash_controller")
+const adminController = require("./controller/admin_controller")
 const authController = require("./controller/auth_controller");
 const initializePassport = require("./middleware/passport");
 const database = require("./database");
@@ -76,14 +76,15 @@ app.post("/reminder/",checkAuthenticated, reminderController.create);
 app.post("/reminder/update/:id",checkAuthenticated, reminderController.update);
 app.post("/reminder/delete/:id",checkAuthenticated, reminderController.delete);
 
-// 👌 Ignore for now
+// Login / Registration
 app.get("/register",checkNotAuthenticated, authController.register);
 app.get("/login",checkNotAuthenticated, authController.login);
 app.post("/register",checkNotAuthenticated, authController.registerSubmit);
 app.post("/login",checkNotAuthenticated, authController.loginSubmit);
 
-app.get("/dashboard", checkAdminAuth, dashController.list);
-// app.post("/dashboard", checkAuthenticated , checkAdmin);
+//Admin controls
+app.get("/admin", checkAdminAuth, adminController.list);
+app.post("/admin", checkAdminAuth, adminController.delete);
 
 
 // LOGOUT

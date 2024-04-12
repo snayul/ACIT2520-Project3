@@ -12,7 +12,6 @@ function initialize(passport, getUserByEmail, getUserById) {
 
         try {
             if (password === user.password) {
-                console.log("User authenticated:", user);
                 return done(null, user);
             } else {
                 console.log("Password incorrect for user:", user);

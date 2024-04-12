@@ -1,11 +1,12 @@
 Breakdown of work:\
-Ray Nguyen: 
+Ray Nguyen:\
 I watched [Understanding our Term Project Starter Code Part 1](https://learn.bcit.ca/d2l/le/content/999093/viewContent/9900452/View)\
 I watched [Understanding our Term Project Starter Code Part 2](https://learn.bcit.ca/d2l/le/content/999093/viewContent/9900453/View)\
 I watched [Understanding our Term Project Starter Code Part 3](https://learn.bcit.ca/d2l/le/content/999093/viewContent/9900454/View)\
 Watched [passport video](https://www.youtube.com/watch?v=-RCnNyD0L-s)\
 These task are for understanding the lab\
-\
+
+What I Did
 I DID Line 63-73 in reminder_controller.js Deleting the reminder\
 I DID Line 44-60 in reminder_controller.js Editing the reminder\
 Added checkNotAuthenticated or checkAuthenticated them to all the routes\

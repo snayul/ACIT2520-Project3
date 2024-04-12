@@ -27,6 +27,7 @@ let authController = {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
+        isAdmin: false,
         reminders: []
       })
       console.log("Updated database:", database);

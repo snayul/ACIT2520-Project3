@@ -4,13 +4,18 @@ const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
+const dashController = require("./controller/dash_controller")
 const authController = require("./controller/auth_controller");
 const initializePassport = require("./middleware/passport");
 const database = require("./database");
 const passport = require("passport");
 const session = require("express-session");
 
-const { checkAuthenticated, checkNotAuthenticated } = require("./middleware/checkAuth");
+const {
+  checkAuthenticated,
+  checkNotAuthenticated,
+  checkAdminAuth,
+} = require("./middleware/checkAuth");
 // error msg handling (wrong pass/email/user not found/etc)
 const flash = require("express-flash");
 // this for the logout function
@@ -52,6 +57,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.use(methodOverride("_method"))
 
 //user avalible in all templates for the logout function to work
@@ -75,6 +81,10 @@ app.get("/register",checkNotAuthenticated, authController.register);
 app.get("/login",checkNotAuthenticated, authController.login);
 app.post("/register",checkNotAuthenticated, authController.registerSubmit);
 app.post("/login",checkNotAuthenticated, authController.loginSubmit);
+
+app.get("/dashboard", checkAdminAuth, dashController.list);
+// app.post("/dashboard", checkAuthenticated , checkAdmin);
+
 
 // LOGOUT
 app.delete('/logout', (req, res) => {

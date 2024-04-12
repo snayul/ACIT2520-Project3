@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="page-header">Users</h1>
+  
+
+  <ul class="list-group">
+    <% users.forEach(function (user) { %>
+      <li class="list-group-item">
+        <strong>Name: </strong><%= user.name %><br>
+        <strong>ID: </strong><%= user.id %><br>
+        <strong>Email: </strong><%= user.email %><br>
+        <strong>Password: </strong><%= user.password %><br>
+        <strong>Is Admin: </strong><%= user.isAdmin %>
+      </li>
+    <% }) %>
+  </ul>
+
+</div>

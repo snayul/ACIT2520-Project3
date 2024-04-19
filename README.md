@@ -36,3 +36,4 @@ Edit /reminder page to display the users name
 Added name input box
 I DID Line 7 in reminder_controller.js to allow for dynamic user switch\
 I rearranged the database structure to allow for user switching\
+Updated homepage to include demo.

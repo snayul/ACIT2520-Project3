@@ -2,6 +2,21 @@
   display: inline-block
 }
 
+#demo {
+  position: fixed;
+  top: 50%;
+  left: 10%; /* Adjust this value to change the horizontal position */
+  transform: translate(-50%, -50%);
+  width: 300px; /* Adjust the width as needed */
+  height: auto;
+  z-index: 9999; /* Adjust the z-index if needed */
+}
+
+/* Optional styling */
+#demo video {
+  width: 100%;
+  height: auto;
+}
 
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
